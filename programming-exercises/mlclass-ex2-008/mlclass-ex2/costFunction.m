@@ -19,13 +19,13 @@ grad = zeros(size(theta));
 %
 % Note: grad should have the same dimensions as theta
 %
+predictions = sigmoid(X*theta);
+y1 = y .* log(predictions);
+y0 = (1 - y) .* log(1 - predictions);
 
+J = -(1/m) * sum( y1 + y0 );
 
-
-
-
-
-
+grad = (1/m) * sum( (predictions - y) .* X);
 
 % =============================================================
 
