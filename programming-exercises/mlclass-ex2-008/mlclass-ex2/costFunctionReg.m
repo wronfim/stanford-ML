@@ -25,24 +25,8 @@ theta(1) = 0;
 
 J = (1/m)*(-y'* log(predictions) - (1 - y)'* log(1-predictions)) + (lambda/(2*m)) * (theta'*theta);
 
-
-% part1 = (1/m) * sum((-y .* log(predictions)) - (1 - y) .* log(1 - predictions));
-% part2 = (lambda/(2*m)) * sum(theta.^2);
-% J = part1 + part2;
-
-
-% theta(1) = 0;
-
-
-
-% x1 = X(:,1);
-% g1 = (1/m) * sum( (predictions - y) .* x1);
-
-% xn = X(:,2:size(X,2));
-% tn = theta(2:length(theta),:);
 grad = (1/m) * X' *(predictions - y) + lambda/m * theta;
         
-% grad = [g1,gn];
 
 % =============================================================
 
