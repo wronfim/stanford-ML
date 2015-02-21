@@ -38,11 +38,13 @@ grad = zeros(size(theta));
 
 
 
+predictions = sigmoid(X*theta);
 
+theta(1) = 0;
 
+J = (1/m)*(-y'* log(predictions) - (1 - y)'* log(1-predictions)) + (lambda/(2*m)) * (theta'*theta);
 
-
-
+grad = (1/m) * X' *(predictions - y) + lambda/m * theta;
 
 
 % =============================================================
