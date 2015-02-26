@@ -22,14 +22,16 @@ p = zeros(size(X, 1), 1);
 %
 
 % Add ones to the X data matrix
-X = [ones(m, 1), X];
+a1 = [ones(m,1), X];
 
-hidden = [ones(m,1), sigmoid(X * Theta1')];
+z2 = a1 * Theta1';
+a2 = sigmoid(z2);
+a2 = [ones(m,1), a2];
 
-output = sigmoid(hidden * Theta2');
+z3 = a2 * Theta2';
+h0 = sigmoid(z3);
 
-[value,p] = max(output,[],2);
-
+[value, p] = max(h0, [], 2)
 % =========================================================================
 
 
