@@ -82,7 +82,7 @@ pause;
 %
 
 %  Train linear regression with lambda = 0
-lambda = 1;
+lambda = 0;
 [theta] = trainLinearReg([ones(m, 1) X], y, lambda);
 
 %  Plot fit over the data
@@ -164,7 +164,7 @@ pause;
 %  lambda to see how the fit and learning curve change.
 %
 
-lambda = 0;
+lambda = 0.01;
 [theta] = trainLinearReg(X_poly, y, lambda);
 
 % Plot training data and fit
@@ -185,6 +185,7 @@ xlabel('Number of training examples')
 ylabel('Error')
 axis([0 13 0 100])
 legend('Train', 'Cross Validation')
+
 
 fprintf('Polynomial Regression (lambda = %f)\n\n', lambda);
 fprintf('# Training Examples\tTrain Error\tCross Validation Error\n');
